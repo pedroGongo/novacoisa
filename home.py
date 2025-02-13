@@ -48,7 +48,7 @@ if not firebase_admin._apps:
 #------------------ Variaveis Golbais ---------------------
 
 
-REDIRECT_URI = "http://localhost:8501"
+REDIRECT_URI = "https://listaa.streamlit.app"
 url = "https://static.wixstatic.com/media/cd3bb0_75d00a426f3a490cad3623afffe0de08~mv2.png/v1/fill/w_238,h_77,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_esprominho_versao%20Horizontal.png"
 psicologa = []
 associação = ["brg-6330@esprominho.pt"]
@@ -68,7 +68,7 @@ def decode_firebase_token(id_token):
 
 #Função para gerar a URL de autenticação do Google
 def get_google_auth_url():
-    auth_url = f"https://accounts.google.com/o/oauth2/auth?client_id=1069155836636-ekve034mfjluv4s6icus6kb7bi3ltpnr.apps.googleusercontent.com&redirect_uri={REDIRECT_URI}&response_type=code&scope=email profile&prompt=select_account"
+    auth_url = f"https://accounts.google.com/o/oauth2/auth?client_id=1069155836636-ekve034mfjluv4s6icus6kb7bi3ltpnr.apps.googleusercontent.com&redirect_uri=https://listaa.streamlit.app&response_type=code&scope=email profile&prompt=select_account"
     return auth_url
 
 
@@ -79,7 +79,7 @@ def exchange_code_for_token(code):
         "code": code,
         "client_id": "1069155836636-ekve034mfjluv4s6icus6kb7bi3ltpnr.apps.googleusercontent.com",
         "client_secret": "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",
-        "redirect_uri": REDIRECT_URI,
+        "redirect_uri": "https://listaa.streamlit.app",
         "grant_type": "authorization_code",
     
     }
